@@ -4,8 +4,8 @@ from .models import Event, Attendee
 
 @admin.register(Event)
 class EventAdmin(admin.ModelAdmin):
-    list_display = ('title', 'datetime', 'location', 'host', 'seats')
-    list_filter = ('datetime', 'location', 'host')
+    list_display = ('title', 'datetime', 'seats', 'available_seats')
+    list_filter = ('datetime',)
     search_fields = ('title',)
 
 

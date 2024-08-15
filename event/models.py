@@ -6,12 +6,14 @@ class Event(models.Model):
     description = models.TextField()
     datetime = models.DateTimeField()
     location = models.CharField(max_length=100)
-    host = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
     seats = models.IntegerField()
     thumbnail = models.ImageField(upload_to='event_thumbnails', blank=True, null=True)
 
     def __str__(self):
         return f"💫{self.title } | 📍Location: {self.location}"
+    
+    def available_seats(self):
+        return self.seats - self.attendees.count()
     
 
 class Attendee(models.Model):

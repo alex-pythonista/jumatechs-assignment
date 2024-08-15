@@ -48,6 +48,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+LOGIN_URL = '/users/login/'
 
 # crispy forms config
 CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
@@ -123,6 +124,9 @@ STATICFILES_DIRS = [
     BASE_DIR / 'static',
 ]
 
+# media contents
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
