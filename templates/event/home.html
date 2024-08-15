@@ -5,24 +5,65 @@
 {% block content %}
 <div class="container pt-2">
     <div class="row">
-        <h3 class="display-6 text-center">Welcome to Caravan</h3>
+        <div class="col-4">
+            <h3 class="display-6 text-center">Welcome to Caravan</h3>
+        </div>
+
+        <h4><small>Total events: {{ events.count }}</small></h4>
     </div>
 </div>
 <div class="container pt-2">
-    {% for event in events %}
     <div class="row">
-        <div class="card mb-3">
-            <img class="card-img-top" src=".{{ event.thumbnail.url }}" alt="Card image cap">
-            <div class="card-body">
-              <h5 class="card-title">{{ event.title }}</h5>
-              <p class="card-text">{{ event.description|slice:":300" }}...</p>
-              <p class="card-text"><small class="text-muted"></small></p>
-              <p class="card-text"><small class="text-muted">📍 Location: {{ event.location }} <br>📅 Date: {{ event.datetime }}</small></p>
-              <p class="card-text"><small class="text-muted">Available Seats: </small>{{ event.available_seats}} </p>
-              <a href="{% url 'event-details' event.id %}" class="btn btn-primary">Details</a>
+        <div class="col-md-7">
+            {% for event in events %}
+            <div class="row">
+                <div class="card mb-3">
+                    <img class="card-img-top" src=".{{ event.thumbnail.url }}" alt="Card image cap">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ event.title }}</h5>
+                        <p class="card-text">{{ event.description|slice:":300" }}...</p>
+                        <p class="card-text"><small class="text-muted"></small></p>
+                        <p class="card-text"><small class="text-muted">📍 Location: {{ event.location }} <br>📅 Date: {{ event.datetime }}</small></p>
+                        <p class="card-text"><small class="text-muted">Available Seats: </small>
+                            {{ event.available_seats }} </p>
+                        <a href="{% url 'event-details' event.id %}" class="btn btn-primary">Details</a>
+                    </div>
+                </div>
             </div>
-          </div>
+            {% endfor %}
+        </div>
+        <div class="col-md-1"></div>
+        <div class="col-md-4">
+            <div class="row">
+            <form method="get">
+                <div class="form-row">
+                  <div class="col">
+                    <input type="text" name="q" class="form-control" placeholder="keyword. i.e. Cake Fest">
+                  </div>
+                    <div class="col">
+                    <button class="btn btn-primary">Search</a>
+                    {% if q %} <button  class="btn btn-warning ml-2">Clear</a> {% endif %}
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <div class="container p-5">
+            
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                    <a href="/admin">Admin Panel</a>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                    <li class="list-group-item">username: alexpy</li>
+                    <li class="list-group-item">password: Caravan123</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        </div>
     </div>
-    {% endfor %}
 </div>
-    {% endblock %}
+{% endblock %}

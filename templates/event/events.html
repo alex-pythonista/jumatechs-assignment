@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %} My events {% endblock %}
+
+{% block content %}
+<div class="container p-5">
+    <h3>Your events</h3>
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Title</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Location</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+            {% for event in events %}
+          <tr>
+            <th scope="row">{{ forloop.counter }}</th>
+            <td>{{ event.title }}</td>
+            <td>{{ event.datetime|date:"l, F jS, Y g:i A" }}</td>
+            <td>{{ event.location }}</td>
+            <td>
+                <a href="{% url 'event-details' event.id %}" class="btn btn-primary btn-sm">Details</a>
+            </td>
+          </tr>
+            {% endfor %}
+        </tbody>
+      </table>
+</div>
+{% endblock %}
