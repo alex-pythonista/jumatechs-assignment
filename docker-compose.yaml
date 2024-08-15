@@ -10,3 +10,28 @@ services:
       - ./db/data:/var/lib/postgresql/data
     ports:
       - 5432:5432
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: caravan
+    command: ["sh", "-c", "python manage.py runserver 0.0.0.0:8000"]
+    entrypoint: ["/app/entrypoint.sh"]
+    volumes:
+      - .:/app
+    ports:
+      - "8000:8000"
+    environment:
+      # django
+      SECRET_KEY: 'django-insecure-t*_^ma_f)difz7f0u+d(l8-wk45g71==no1kc%x*nzvwmyu2z('
+      DEBUG: True
+
+      #db
+      DB_NAME: 'caravan_db'
+      DB_USER: 'caravan_user'
+      DB_PASSWORD: 'caravan_password'
+      DB_HOST: 'localhost'
+      DB_PORT: '5432'
+    depends_on:
+      - db

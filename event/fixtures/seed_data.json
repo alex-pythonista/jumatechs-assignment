@@ -1,0 +1,54 @@
+[
+{
+  "model": "event.event",
+  "pk": 1,
+  "fields": {
+    "title": "Cake Fest - LA",
+    "description": "Cake Fest - LA is the ultimate celebration of all things cake, bringing together bakers, decorators, and dessert lovers from across the region. Held in the heart of Los Angeles, this vibrant festival showcases stunning cake designs, hands-on workshops, live demonstrations, and a delicious array of cake samples. Whether you're a professional baker or simply a cake enthusiast, Cake Fest - LA offers a sweet experience filled with creativity, inspiration, and, of course, mouthwatering treats. Join us for a day of fun, flavor, and fabulous cakes!",
+    "datetime": "2024-08-26T04:30:00Z",
+    "location": "The Bakery Pavilion at Sugarland Park, 1234 Sweet Street, Los Angeles, CA 90001.",
+    "seats": 40,
+    "thumbnail": "event_thumbnails/cakefest-thumb.png"
+  }
+},
+{
+  "model": "event.event",
+  "pk": 2,
+  "fields": {
+    "title": "Cake Fest - Dhaka",
+    "description": "Cake Fest - LA is the ultimate celebration of all things cake, bringing together bakers, decorators, and dessert lovers from across the region. Held in the heart of Los Angeles, this vibrant festival showcases stunning cake designs, hands-on workshops, live demonstrations, and a delicious array of cake samples. Whether you're a professional baker or simply a cake enthusiast, Cake Fest - LA offers a sweet experience filled with creativity, inspiration, and, of course, mouthwatering treats. Join us for a day of fun, flavor, and fabulous cakes!",
+    "datetime": "2024-08-23T04:30:00Z",
+    "location": "BRAC HQ, Gulshan-2, Dhaka 1229",
+    "seats": 2,
+    "thumbnail": "event_thumbnails/cakefest-thumb_7ctja7e.png"
+  }
+},
+{
+  "model": "event.event",
+  "pk": 3,
+  "fields": {
+    "title": "Programming Contest - Viena",
+    "description": "Programming Contest - Vienna is an exciting event where coders from around the globe gather to compete in a fast-paced, intellectually challenging environment. Set against the picturesque backdrop of Vienna, this contest tests participants' problem-solving skills, algorithmic thinking, and coding proficiency across a variety of programming languages. Whether you're a seasoned competitor or a newcomer eager to test your skills, this event offers a unique opportunity to showcase your talents, learn from peers, and experience the rich cultural heritage of Vienna. Get ready to code, compete, and connect at Programming Contest - Vienna!",
+    "datetime": "2024-09-01T18:00:00Z",
+    "location": "TechHub Arena, 56 Code Lane, Vienna, Austria 1010.",
+    "seats": 35,
+    "thumbnail": "event_thumbnails/pc-viena-thumbnail.png"
+  }
+},
+{
+  "model": "event.attendee",
+  "pk": 1,
+  "fields": {
+    "event": 1,
+    "user": 2
+  }
+},
+{
+  "model": "event.attendee",
+  "pk": 5,
+  "fields": {
+    "event": 2,
+    "user": 3
+  }
+}
+]
