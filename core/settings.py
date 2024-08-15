@@ -16,7 +16,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = os.environ.get('DEBUG', False)
 
 ALLOWED_HOSTS = ['caravan.alexpy.com', 'localhost',]
-
+CSRF_TRUSTED_ORIGINS = ["https://caravan.alexpy.com"]
 
 # Application definition
 
