@@ -1,0 +1,12 @@
+services:
+  db:
+    image: postgres:latest
+    container_name: caravandb
+    environment:
+      POSTGRES_DB: caravan_db
+      POSTGRES_USER: caravan_user
+      POSTGRES_PASSWORD: caravan_password
+    volumes:
+      - ./db/data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
